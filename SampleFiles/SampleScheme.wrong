@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<SchemeSave xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SchemeFormats>
+    <SchemeDefinition>
+      <title>InTextCitation$</title>
+      <syntax>(Author$, Year$)</syntax>
+    </SchemeDefinition>
+    <SchemeDefinition>
+      <title>CiteWrongNote</title>
+      <syntax>CiteWrong can format bibliographies according to parameters set out in a scheme template, or embedded in a bibliography database. &lt;br /&gt; The program makes use of substitute keywords to place source information in the exact format called for by the user.</syntax>
+    </SchemeDefinition>
+    <SchemeDefinition>
+      <title>Demonstration</title>
+      <syntax>Substitutes can be wrapped around other non-substitute words like this (Date$). It is not necessary to surround the substitute keyword with spaces, but it must be suffixed with a dollar sign ($).</syntax>
+    </SchemeDefinition>
+    <SchemeDefinition>
+      <title>Demonstration2</title>
+      <syntax>All the built-in substitute fields are as follows: Year$, RestOfPublicationDate$, Author$, Location$, fetchedDate$, Publisher$, PublicationTime$, Title$, Media$, DateRange$, OriginalYear$, Series$, Volume$, Notes$, Chapter$, Section$, Edition$, CoAuthor$, PageRange$, Page$.</syntax>
+    </SchemeDefinition>
+    <SchemeDefinition>
+      <title>Demonstration3</title>
+      <syntax>Additionally, macros are defined as source types whose names are suffixed with a dollar sign. These can be nested inside other source types like this - InTextCitation$</syntax>
+    </SchemeDefinition>
+    <SchemeDefinition>
+      <title>FileFormats</title>
+      <syntax>The file format is a basic XML serilalization of the internal data structure used by the program. It is very simple however, and can be modified in a standard text editor when necessary. Scheme templates are in a similar format.</syntax>
+    </SchemeDefinition>
+  </SchemeFormats>
+</SchemeSave>
