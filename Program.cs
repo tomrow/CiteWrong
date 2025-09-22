@@ -55,6 +55,7 @@ namespace CiteWrong
                 output = output.Replace("Media$", mediaFmtName);
                 output = output.Replace("DateRange$", originalPublicationDate.ToString("dd MMMM yyyy") + " to " + publicationDate.ToString("dd MMMM yyyy"));
                 output = output.Replace("OriginalYear$", originalPublicationDate.Year.ToString());
+                output = output.Replace("OriginalPublicationDate$", originalPublicationDate.ToString("dd MMMM yyyy"));
                 output = output.Replace("Series$", seriesName);
                 output = output.Replace("Volume$", volumeName);
                 output = output.Replace("Notes$", notes);
