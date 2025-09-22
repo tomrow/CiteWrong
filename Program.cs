@@ -65,7 +65,7 @@ namespace CiteWrong
                 output = output.Replace("CoAuthor$", coAuthorName);
                 output = output.Replace("PageRange$", pageStart+"-"+pageEnd);
                 output = output.Replace("Page$", pageStart);
-                            }
+            }
             return output;
 
             
