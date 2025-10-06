@@ -160,7 +160,7 @@
             // 
             this.schemeName.ForeColor = System.Drawing.SystemColors.GrayText;
             this.schemeName.Name = "schemeName";
-            this.schemeName.Size = new System.Drawing.Size(175, 13);
+            this.schemeName.Size = new System.Drawing.Size(175, 22);
             this.schemeName.Text = "A scheme file has not been loaded.";
             this.schemeName.Click += new System.EventHandler(this.schemeName_Click);
             // 
@@ -173,6 +173,7 @@
             this.citeList.Name = "citeList";
             this.citeList.Size = new System.Drawing.Size(714, 241);
             this.citeList.TabIndex = 1;
+            this.citeList.SelectedIndexChanged += new System.EventHandler(this.citeList_SelectedIndexChanged);
             this.citeList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.citeList_MouseDoubleClick);
             // 
             // schemeImportFileDialog
@@ -208,6 +209,7 @@
             this.ClientSize = new System.Drawing.Size(714, 266);
             this.Controls.Add(this.citeList);
             this.Controls.Add(this.toolStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "CiteWrong";
             this.toolStrip1.ResumeLayout(false);

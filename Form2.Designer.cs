@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.authorName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.sourceFmt = new System.Windows.Forms.ComboBox();
@@ -457,9 +458,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.authorName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form2";
+            this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Add Source";
             this.Load += new System.EventHandler(this.Form2_Load);

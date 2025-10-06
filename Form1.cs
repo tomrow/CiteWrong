@@ -159,11 +159,20 @@ namespace CiteWrong
 
         private void copyToolStripButton_Click(object sender, EventArgs e)
         {
-            BibliographyEntry b = new BibliographyEntry();
-            b = Bibliography.bDatabase[UIState.SelectedItem];
-            b.sourceFmt = "InTextCitation$";
-            System.Windows.Forms.Clipboard.SetText(b.ToString());
-            MessageBox.Show(b.ToString());
+            if(citeList.SelectedIndex>=0)
+            {
+                UIState.SelectedItem = citeList.SelectedIndex;
+                BibliographyEntry b = new BibliographyEntry();
+                b = Bibliography.bDatabase[UIState.SelectedItem];
+                b.sourceFmt = "InTextCitation$";
+                System.Windows.Forms.Clipboard.SetText(b.ToString());
+                MessageBox.Show(b.ToString());
+            }
+        }
+
+        private void citeList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UIState.SelectedItem = citeList.SelectedIndex;
         }
     }
 }

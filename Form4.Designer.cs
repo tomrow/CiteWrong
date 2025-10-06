@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form4));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.sourceTypes = new System.Windows.Forms.ListBox();
             this.addTypeBtn = new System.Windows.Forms.ToolStripButton();
+            this.sourceTypes = new System.Windows.Forms.ListBox();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,16 +47,6 @@
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // sourceTypes
-            // 
-            this.sourceTypes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sourceTypes.FormattingEnabled = true;
-            this.sourceTypes.Location = new System.Drawing.Point(0, 25);
-            this.sourceTypes.Name = "sourceTypes";
-            this.sourceTypes.Size = new System.Drawing.Size(606, 347);
-            this.sourceTypes.TabIndex = 1;
-            this.sourceTypes.DoubleClick += new System.EventHandler(this.sourceTypes_DoubleClick);
-            // 
             // addTypeBtn
             // 
             this.addTypeBtn.Image = global::CiteWrong.Properties.Resources.add;
@@ -66,6 +57,16 @@
     "e an existing entry.";
             this.addTypeBtn.Click += new System.EventHandler(this.addTypeBtn_Click);
             // 
+            // sourceTypes
+            // 
+            this.sourceTypes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sourceTypes.FormattingEnabled = true;
+            this.sourceTypes.Location = new System.Drawing.Point(0, 25);
+            this.sourceTypes.Name = "sourceTypes";
+            this.sourceTypes.Size = new System.Drawing.Size(606, 347);
+            this.sourceTypes.TabIndex = 1;
+            this.sourceTypes.DoubleClick += new System.EventHandler(this.sourceTypes_DoubleClick);
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -73,7 +74,9 @@
             this.ClientSize = new System.Drawing.Size(606, 372);
             this.Controls.Add(this.sourceTypes);
             this.Controls.Add(this.toolStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form4";
+            this.ShowIcon = false;
             this.Text = "Source types";
             this.Load += new System.EventHandler(this.Form4_Load);
             this.toolStrip1.ResumeLayout(false);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.titleBox = new System.Windows.Forms.TextBox();
             this.syntaxBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -101,9 +102,11 @@
             this.Controls.Add(this.syntaxBox);
             this.Controls.Add(this.titleBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form3";
+            this.ShowIcon = false;
             this.Text = "Add a category";
             this.Load += new System.EventHandler(this.Form3_Load);
             this.ResumeLayout(false);
