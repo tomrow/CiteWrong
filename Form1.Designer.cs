@@ -30,22 +30,23 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.copyToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.importScheme = new System.Windows.Forms.ToolStripButton();
-            this.editSchemeBtn = new System.Windows.Forms.ToolStripButton();
             this.schemeName = new System.Windows.Forms.ToolStripLabel();
             this.citeList = new System.Windows.Forms.ListBox();
             this.schemeImportFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.BiblioFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveDatabaseDialog = new System.Windows.Forms.SaveFileDialog();
             this.exportFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.copyToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.importScheme = new System.Windows.Forms.ToolStripButton();
+            this.editSchemeBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,6 +61,7 @@
             this.copyToolStripButton,
             this.toolStripSeparator1,
             this.toolStripButton2,
+            this.toolStripButton3,
             this.toolStripButton1,
             this.importScheme,
             this.editSchemeBtn,
@@ -67,9 +69,65 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(714, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(826, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripSeparator
+            // 
+            this.toolStripSeparator.Name = "toolStripSeparator";
+            this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // schemeName
+            // 
+            this.schemeName.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.schemeName.Name = "schemeName";
+            this.schemeName.Size = new System.Drawing.Size(175, 22);
+            this.schemeName.Text = "A scheme file has not been loaded.";
+            this.schemeName.Click += new System.EventHandler(this.schemeName_Click);
+            // 
+            // citeList
+            // 
+            this.citeList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.citeList.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.citeList.FormattingEnabled = true;
+            this.citeList.Location = new System.Drawing.Point(0, 25);
+            this.citeList.Name = "citeList";
+            this.citeList.Size = new System.Drawing.Size(826, 241);
+            this.citeList.TabIndex = 1;
+            this.citeList.SelectedIndexChanged += new System.EventHandler(this.citeList_SelectedIndexChanged);
+            this.citeList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.citeList_MouseDoubleClick);
+            // 
+            // schemeImportFileDialog
+            // 
+            this.schemeImportFileDialog.DefaultExt = "wrong";
+            this.schemeImportFileDialog.Filter = "Bibliography scheme|*.wrong|All files|*.*";
+            this.schemeImportFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.schemeImportFileDialog_FileOk);
+            // 
+            // BiblioFileDialog
+            // 
+            this.BiblioFileDialog.DefaultExt = "bibx";
+            this.BiblioFileDialog.Filter = "Bibliography database|*.bibx|All files|*.*";
+            this.BiblioFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.BiblioFileDialog_FileOk);
+            // 
+            // saveDatabaseDialog
+            // 
+            this.saveDatabaseDialog.CreatePrompt = true;
+            this.saveDatabaseDialog.DefaultExt = "bibx";
+            this.saveDatabaseDialog.Filter = "Bibliography database|*.bibx|All files|*.*";
+            this.saveDatabaseDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.saveDatabaseDialog_FileOk);
+            // 
+            // exportFileDialog
+            // 
+            this.exportFileDialog.CreatePrompt = true;
+            this.exportFileDialog.DefaultExt = "htm";
+            this.exportFileDialog.Filter = "HTML file|*.htm|All files|*.*";
+            this.exportFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.exportFileDialog_FileOk);
             // 
             // newToolStripButton
             // 
@@ -101,11 +159,6 @@
             this.saveToolStripButton.Text = "&Save";
             this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
             // 
-            // toolStripSeparator
-            // 
-            this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
             // copyToolStripButton
             // 
             this.copyToolStripButton.Image = global::CiteWrong.Properties.Resources.copycite;
@@ -114,11 +167,6 @@
             this.copyToolStripButton.Size = new System.Drawing.Size(129, 22);
             this.copyToolStripButton.Text = "&Copy In-text Citation";
             this.copyToolStripButton.Click += new System.EventHandler(this.copyToolStripButton_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // toolStripButton2
             // 
@@ -156,57 +204,21 @@
             this.editSchemeBtn.Text = "Edit Scheme";
             this.editSchemeBtn.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
-            // schemeName
+            // toolStripButton3
             // 
-            this.schemeName.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.schemeName.Name = "schemeName";
-            this.schemeName.Size = new System.Drawing.Size(175, 22);
-            this.schemeName.Text = "A scheme file has not been loaded.";
-            this.schemeName.Click += new System.EventHandler(this.schemeName_Click);
-            // 
-            // citeList
-            // 
-            this.citeList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.citeList.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.citeList.FormattingEnabled = true;
-            this.citeList.Location = new System.Drawing.Point(0, 25);
-            this.citeList.Name = "citeList";
-            this.citeList.Size = new System.Drawing.Size(714, 241);
-            this.citeList.TabIndex = 1;
-            this.citeList.SelectedIndexChanged += new System.EventHandler(this.citeList_SelectedIndexChanged);
-            this.citeList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.citeList_MouseDoubleClick);
-            // 
-            // schemeImportFileDialog
-            // 
-            this.schemeImportFileDialog.DefaultExt = "wrong";
-            this.schemeImportFileDialog.Filter = "Bibliography scheme|*.wrong|All files|*.*";
-            this.schemeImportFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.schemeImportFileDialog_FileOk);
-            // 
-            // BiblioFileDialog
-            // 
-            this.BiblioFileDialog.DefaultExt = "bibx";
-            this.BiblioFileDialog.Filter = "Bibliography database|*.bibx|All files|*.*";
-            this.BiblioFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.BiblioFileDialog_FileOk);
-            // 
-            // saveDatabaseDialog
-            // 
-            this.saveDatabaseDialog.CreatePrompt = true;
-            this.saveDatabaseDialog.DefaultExt = "bibx";
-            this.saveDatabaseDialog.Filter = "Bibliography database|*.bibx|All files|*.*";
-            this.saveDatabaseDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.saveDatabaseDialog_FileOk);
-            // 
-            // exportFileDialog
-            // 
-            this.exportFileDialog.CreatePrompt = true;
-            this.exportFileDialog.DefaultExt = "htm";
-            this.exportFileDialog.Filter = "HTML file|*.htm|All files|*.*";
-            this.exportFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.exportFileDialog_FileOk);
+            this.toolStripButton3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.toolStripButton3.Image = global::CiteWrong.Properties.Resources.delete;
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(94, 22);
+            this.toolStripButton3.Text = "Delete Source";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click_1);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(714, 266);
+            this.ClientSize = new System.Drawing.Size(826, 266);
             this.Controls.Add(this.citeList);
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -238,6 +250,7 @@
         private System.Windows.Forms.SaveFileDialog saveDatabaseDialog;
         private System.Windows.Forms.SaveFileDialog exportFileDialog;
         private System.Windows.Forms.ToolStripButton editSchemeBtn;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
     }
 }
 

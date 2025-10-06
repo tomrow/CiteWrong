@@ -174,5 +174,19 @@ namespace CiteWrong
         {
             UIState.SelectedItem = citeList.SelectedIndex;
         }
+
+        private void toolStripButton3_Click_1(object sender, EventArgs e)
+        {
+            if (citeList.SelectedIndex >= 0)
+            {
+                int i = citeList.SelectedIndex;
+                DialogResult confirm= MessageBox.Show("Are you sure you want to delete this source? \n" + (Bibliography.bDatabase[i].authorName + " " + Bibliography.bDatabase[i].publicationDate.Year.ToString() + ", " + Bibliography.bDatabase[i].workTitle), "Delete a source", MessageBoxButtons.YesNo);
+                if (confirm == DialogResult.Yes)
+                { 
+                    Bibliography.bDatabase.RemoveAt(i);
+                    RefreshListView();
+                }
+            }
+        }
     }
 }
