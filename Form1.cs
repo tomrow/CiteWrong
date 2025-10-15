@@ -188,5 +188,42 @@ namespace CiteWrong
                 }
             }
         }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            if(citeList.SelectedIndex>=0)
+            {
+                UIState.SelectedItem = citeList.SelectedIndex;
+                BibliographyEntry b = new BibliographyEntry();
+                b = Bibliography.bDatabase[UIState.SelectedItem];
+                System.Windows.Forms.Clipboard.SetText(b.retrievalLocation);
+                
+            }
+        }
+
+        private void workNameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Bibliography.bDatabase.Sort((x, y) => string.Compare(x.workTitle, y.workTitle));
+            RefreshListView();
+            //for numbers: list.Sort((x, y) => x.Age.CompareTo(y.Age));
+        }
+
+        private void authorNameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Bibliography.bDatabase.Sort((x, y) => string.Compare(x.authorName, y.authorName));
+            RefreshListView();
+        }
+
+        private void accessLocationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Bibliography.bDatabase.Sort((x, y) => string.Compare(x.retrievalLocation, y.retrievalLocation));
+            RefreshListView();
+        }
+
+        private void bibliographyEntryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Bibliography.bDatabase.Sort((x, y) => string.Compare(x.ToString(), y.ToString()));
+            RefreshListView();
+        }
     }
 }

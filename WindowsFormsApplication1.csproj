@@ -164,6 +164,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="delete.bmp" />
+    <None Include="Resources\link.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

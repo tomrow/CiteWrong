@@ -42,11 +42,17 @@
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.copyToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.importScheme = new System.Windows.Forms.ToolStripButton();
             this.editSchemeBtn = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.sortByDropDown = new System.Windows.Forms.ToolStripDropDownButton();
+            this.authorNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.workNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.accessLocationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bibliographyEntryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +65,9 @@
             this.saveToolStripButton,
             this.toolStripSeparator,
             this.copyToolStripButton,
+            this.toolStripButton4,
             this.toolStripSeparator1,
+            this.sortByDropDown,
             this.toolStripButton2,
             this.toolStripButton3,
             this.toolStripButton1,
@@ -87,7 +95,7 @@
             // 
             this.schemeName.ForeColor = System.Drawing.SystemColors.GrayText;
             this.schemeName.Name = "schemeName";
-            this.schemeName.Size = new System.Drawing.Size(175, 22);
+            this.schemeName.Size = new System.Drawing.Size(175, 13);
             this.schemeName.Text = "A scheme file has not been loaded.";
             this.schemeName.Click += new System.EventHandler(this.schemeName_Click);
             // 
@@ -168,6 +176,15 @@
             this.copyToolStripButton.Text = "&Copy In-text Citation";
             this.copyToolStripButton.Click += new System.EventHandler(this.copyToolStripButton_Click);
             // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.Image = global::CiteWrong.Properties.Resources.link;
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(95, 22);
+            this.toolStripButton4.Text = "Copy Location";
+            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
+            // 
             // toolStripButton2
             // 
             this.toolStripButton2.Image = global::CiteWrong.Properties.Resources.add;
@@ -176,6 +193,16 @@
             this.toolStripButton2.Size = new System.Drawing.Size(82, 22);
             this.toolStripButton2.Text = "Add Source";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.toolStripButton3.Image = global::CiteWrong.Properties.Resources.delete;
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(94, 22);
+            this.toolStripButton3.Text = "Delete Source";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click_1);
             // 
             // toolStripButton1
             // 
@@ -204,15 +231,47 @@
             this.editSchemeBtn.Text = "Edit Scheme";
             this.editSchemeBtn.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
-            // toolStripButton3
+            // sortByDropDown
             // 
-            this.toolStripButton3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.toolStripButton3.Image = global::CiteWrong.Properties.Resources.delete;
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(94, 22);
-            this.toolStripButton3.Text = "Delete Source";
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click_1);
+            this.sortByDropDown.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.authorNameToolStripMenuItem,
+            this.workNameToolStripMenuItem,
+            this.accessLocationToolStripMenuItem,
+            this.bibliographyEntryToolStripMenuItem});
+            this.sortByDropDown.Image = ((System.Drawing.Image)(resources.GetObject("sortByDropDown.Image")));
+            this.sortByDropDown.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.sortByDropDown.Name = "sortByDropDown";
+            this.sortByDropDown.Size = new System.Drawing.Size(83, 22);
+            this.sortByDropDown.Text = "Sort by...";
+            this.sortByDropDown.ToolTipText = "Sort the bibliography database by a specific category";
+            // 
+            // authorNameToolStripMenuItem
+            // 
+            this.authorNameToolStripMenuItem.Name = "authorNameToolStripMenuItem";
+            this.authorNameToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.authorNameToolStripMenuItem.Text = "Author Name";
+            this.authorNameToolStripMenuItem.Click += new System.EventHandler(this.authorNameToolStripMenuItem_Click);
+            // 
+            // workNameToolStripMenuItem
+            // 
+            this.workNameToolStripMenuItem.Name = "workNameToolStripMenuItem";
+            this.workNameToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.workNameToolStripMenuItem.Text = "Work Name";
+            this.workNameToolStripMenuItem.Click += new System.EventHandler(this.workNameToolStripMenuItem_Click);
+            // 
+            // accessLocationToolStripMenuItem
+            // 
+            this.accessLocationToolStripMenuItem.Name = "accessLocationToolStripMenuItem";
+            this.accessLocationToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.accessLocationToolStripMenuItem.Text = "Access location";
+            this.accessLocationToolStripMenuItem.Click += new System.EventHandler(this.accessLocationToolStripMenuItem_Click);
+            // 
+            // bibliographyEntryToolStripMenuItem
+            // 
+            this.bibliographyEntryToolStripMenuItem.Name = "bibliographyEntryToolStripMenuItem";
+            this.bibliographyEntryToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.bibliographyEntryToolStripMenuItem.Text = "Bibliography entry";
+            this.bibliographyEntryToolStripMenuItem.Click += new System.EventHandler(this.bibliographyEntryToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -251,6 +310,12 @@
         private System.Windows.Forms.SaveFileDialog exportFileDialog;
         private System.Windows.Forms.ToolStripButton editSchemeBtn;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.ToolStripDropDownButton sortByDropDown;
+        private System.Windows.Forms.ToolStripMenuItem authorNameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem workNameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem accessLocationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bibliographyEntryToolStripMenuItem;
     }
 }
 

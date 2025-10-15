@@ -95,6 +95,13 @@ namespace CiteWrong.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap link {
+            get {
+                object obj = ResourceManager.GetObject("link", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap scheme {
             get {
                 object obj = ResourceManager.GetObject("scheme", resourceCulture);
