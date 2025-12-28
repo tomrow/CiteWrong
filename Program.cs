@@ -6,7 +6,7 @@ using System.Windows.Forms;
 namespace CiteWrong
 {
     [Serializable]
-    public struct BibliographyEntry
+    public struct BibliographyEntry : IEquatable<BibliographyEntry>
     {
         public string sourceFmt;
         public string authorName;
@@ -70,12 +70,42 @@ namespace CiteWrong
 
             
         }
+
+        public bool Equals(BibliographyEntry other)
+        {
+            if (this.sourceFmt != other.sourceFmt) return false;
+            if (this.authorName != other.authorName) return false;
+            if (this.publisherName != other.publisherName) return false;
+            if (this.coAuthorName != other.coAuthorName) return false;
+            if (this.workTitle != other.workTitle) return false;
+            if (this.seriesName != other.seriesName) return false;
+            if (this.volumeName != other.volumeName) return false;
+            if (this.editionName != other.editionName) return false;
+            if (this.chapterName != other.chapterName) return false;
+            if (this.sectionName != other.sectionName) return false;
+            if (this.pageStart != other.pageStart) return false;
+            if (this.pageEnd != other.pageEnd) return false;
+            if (this.mediaFmtName != other.mediaFmtName) return false;
+            if (this.retrievalLocation != other.retrievalLocation) return false;
+            if (this.notes != other.notes) return false;
+            if (this.publicationDate != other.publicationDate) return false;
+            if (this.originalPublicationDate != other.originalPublicationDate) return false;
+            if (this.fetchDate != other.fetchDate) return false;
+            return true;
+        }
     }
 
-    public struct SchemeDefinition
+    public struct SchemeDefinition : IEquatable<SchemeDefinition>
     {
         public string title;
         public string syntax;
+
+        public bool Equals(SchemeDefinition other)
+        {
+            if (this.title != other.title) return false;
+            if (this.syntax != other.syntax) return false;
+            return true;
+        }
     }
     public static class UIState
     { public static int SelectedItem; }
@@ -94,6 +124,7 @@ namespace CiteWrong
 
     }
     public struct SchemeSave { public List<SchemeDefinition> SchemeFormats; }
+    public struct DualInt { public int x; public int y;}
     static class Program
     {
         /// <summary>

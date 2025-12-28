@@ -43,16 +43,17 @@
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.copyToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.importScheme = new System.Windows.Forms.ToolStripButton();
-            this.editSchemeBtn = new System.Windows.Forms.ToolStripButton();
             this.sortByDropDown = new System.Windows.Forms.ToolStripDropDownButton();
             this.authorNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.workNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accessLocationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bibliographyEntryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.importScheme = new System.Windows.Forms.ToolStripButton();
+            this.editSchemeBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,6 +71,7 @@
             this.sortByDropDown,
             this.toolStripButton2,
             this.toolStripButton3,
+            this.toolStripButton5,
             this.toolStripButton1,
             this.importScheme,
             this.editSchemeBtn,
@@ -77,7 +79,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(826, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1205, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -95,7 +97,7 @@
             // 
             this.schemeName.ForeColor = System.Drawing.SystemColors.GrayText;
             this.schemeName.Name = "schemeName";
-            this.schemeName.Size = new System.Drawing.Size(175, 13);
+            this.schemeName.Size = new System.Drawing.Size(175, 22);
             this.schemeName.Text = "A scheme file has not been loaded.";
             this.schemeName.Click += new System.EventHandler(this.schemeName_Click);
             // 
@@ -106,7 +108,7 @@
             this.citeList.FormattingEnabled = true;
             this.citeList.Location = new System.Drawing.Point(0, 25);
             this.citeList.Name = "citeList";
-            this.citeList.Size = new System.Drawing.Size(826, 241);
+            this.citeList.Size = new System.Drawing.Size(1205, 241);
             this.citeList.TabIndex = 1;
             this.citeList.SelectedIndexChanged += new System.EventHandler(this.citeList_SelectedIndexChanged);
             this.citeList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.citeList_MouseDoubleClick);
@@ -185,6 +187,48 @@
             this.toolStripButton4.Text = "Copy Location";
             this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
+            // sortByDropDown
+            // 
+            this.sortByDropDown.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.authorNameToolStripMenuItem,
+            this.workNameToolStripMenuItem,
+            this.accessLocationToolStripMenuItem,
+            this.bibliographyEntryToolStripMenuItem});
+            this.sortByDropDown.Image = ((System.Drawing.Image)(resources.GetObject("sortByDropDown.Image")));
+            this.sortByDropDown.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.sortByDropDown.Name = "sortByDropDown";
+            this.sortByDropDown.Size = new System.Drawing.Size(83, 22);
+            this.sortByDropDown.Text = "Sort by...";
+            this.sortByDropDown.ToolTipText = "Sort the bibliography database by a specific category";
+            // 
+            // authorNameToolStripMenuItem
+            // 
+            this.authorNameToolStripMenuItem.Name = "authorNameToolStripMenuItem";
+            this.authorNameToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.authorNameToolStripMenuItem.Text = "Author Name";
+            this.authorNameToolStripMenuItem.Click += new System.EventHandler(this.authorNameToolStripMenuItem_Click);
+            // 
+            // workNameToolStripMenuItem
+            // 
+            this.workNameToolStripMenuItem.Name = "workNameToolStripMenuItem";
+            this.workNameToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.workNameToolStripMenuItem.Text = "Work Name";
+            this.workNameToolStripMenuItem.Click += new System.EventHandler(this.workNameToolStripMenuItem_Click);
+            // 
+            // accessLocationToolStripMenuItem
+            // 
+            this.accessLocationToolStripMenuItem.Name = "accessLocationToolStripMenuItem";
+            this.accessLocationToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.accessLocationToolStripMenuItem.Text = "Access location";
+            this.accessLocationToolStripMenuItem.Click += new System.EventHandler(this.accessLocationToolStripMenuItem_Click);
+            // 
+            // bibliographyEntryToolStripMenuItem
+            // 
+            this.bibliographyEntryToolStripMenuItem.Name = "bibliographyEntryToolStripMenuItem";
+            this.bibliographyEntryToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.bibliographyEntryToolStripMenuItem.Text = "Bibliography entry";
+            this.bibliographyEntryToolStripMenuItem.Click += new System.EventHandler(this.bibliographyEntryToolStripMenuItem_Click);
+            // 
             // toolStripButton2
             // 
             this.toolStripButton2.Image = global::CiteWrong.Properties.Resources.add;
@@ -203,6 +247,15 @@
             this.toolStripButton3.Size = new System.Drawing.Size(94, 22);
             this.toolStripButton3.Text = "Delete Source";
             this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click_1);
+            // 
+            // toolStripButton5
+            // 
+            this.toolStripButton5.Image = global::CiteWrong.Properties.Resources.batch;
+            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.Size = new System.Drawing.Size(103, 22);
+            this.toolStripButton5.Text = "Batch operation";
+            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
             // toolStripButton1
             // 
@@ -231,53 +284,11 @@
             this.editSchemeBtn.Text = "Edit Scheme";
             this.editSchemeBtn.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
-            // sortByDropDown
-            // 
-            this.sortByDropDown.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.authorNameToolStripMenuItem,
-            this.workNameToolStripMenuItem,
-            this.accessLocationToolStripMenuItem,
-            this.bibliographyEntryToolStripMenuItem});
-            this.sortByDropDown.Image = ((System.Drawing.Image)(resources.GetObject("sortByDropDown.Image")));
-            this.sortByDropDown.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.sortByDropDown.Name = "sortByDropDown";
-            this.sortByDropDown.Size = new System.Drawing.Size(83, 22);
-            this.sortByDropDown.Text = "Sort by...";
-            this.sortByDropDown.ToolTipText = "Sort the bibliography database by a specific category";
-            // 
-            // authorNameToolStripMenuItem
-            // 
-            this.authorNameToolStripMenuItem.Name = "authorNameToolStripMenuItem";
-            this.authorNameToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
-            this.authorNameToolStripMenuItem.Text = "Author Name";
-            this.authorNameToolStripMenuItem.Click += new System.EventHandler(this.authorNameToolStripMenuItem_Click);
-            // 
-            // workNameToolStripMenuItem
-            // 
-            this.workNameToolStripMenuItem.Name = "workNameToolStripMenuItem";
-            this.workNameToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
-            this.workNameToolStripMenuItem.Text = "Work Name";
-            this.workNameToolStripMenuItem.Click += new System.EventHandler(this.workNameToolStripMenuItem_Click);
-            // 
-            // accessLocationToolStripMenuItem
-            // 
-            this.accessLocationToolStripMenuItem.Name = "accessLocationToolStripMenuItem";
-            this.accessLocationToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
-            this.accessLocationToolStripMenuItem.Text = "Access location";
-            this.accessLocationToolStripMenuItem.Click += new System.EventHandler(this.accessLocationToolStripMenuItem_Click);
-            // 
-            // bibliographyEntryToolStripMenuItem
-            // 
-            this.bibliographyEntryToolStripMenuItem.Name = "bibliographyEntryToolStripMenuItem";
-            this.bibliographyEntryToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.bibliographyEntryToolStripMenuItem.Text = "Bibliography entry";
-            this.bibliographyEntryToolStripMenuItem.Click += new System.EventHandler(this.bibliographyEntryToolStripMenuItem_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(826, 266);
+            this.ClientSize = new System.Drawing.Size(1205, 266);
             this.Controls.Add(this.citeList);
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -316,6 +327,7 @@
         private System.Windows.Forms.ToolStripMenuItem workNameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem accessLocationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bibliographyEntryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton toolStripButton5;
     }
 }
 

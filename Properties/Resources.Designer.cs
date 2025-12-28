@@ -67,6 +67,13 @@ namespace CiteWrong.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap batch {
+            get {
+                object obj = ResourceManager.GetObject("batch", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap copycite {
             get {
                 object obj = ResourceManager.GetObject("copycite", resourceCulture);

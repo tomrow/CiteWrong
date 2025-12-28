@@ -78,6 +78,7 @@ namespace CiteWrong
             Bibliography.bDatabase = new List<BibliographyEntry>();
             Bibliography.SchemeFormats = new List<SchemeDefinition>();
             schemeName.Text = "A scheme file has not been loaded.";
+            this.Text = "CiteWrong (New file)";
             RefreshListView();
         }
 
@@ -89,6 +90,7 @@ namespace CiteWrong
             Bibliography.SchemeFormats = BibOpen.SchemeFormats;
             Bibliography.SchemePath = BibOpen.SchemePath;
             openTarget.Close();
+            this.Text = BiblioFileDialog.FileName;
             RefreshListView();
         }
 
@@ -101,6 +103,7 @@ namespace CiteWrong
             BibSaved.SchemeFormats = Bibliography.SchemeFormats;
             BibSaved.SchemePath = Bibliography.SchemePath;
             xs.Serialize(saveTarget, BibSaved);
+            this.Text = saveDatabaseDialog.FileName;
             saveTarget.Close();
         }
 
@@ -223,6 +226,13 @@ namespace CiteWrong
         private void bibliographyEntryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Bibliography.bDatabase.Sort((x, y) => string.Compare(x.ToString(), y.ToString()));
+            RefreshListView();
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            Form5 wizard = new Form5();
+            wizard.ShowDialog();
             RefreshListView();
         }
     }
