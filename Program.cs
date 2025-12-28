@@ -88,9 +88,9 @@ namespace CiteWrong
             if (this.mediaFmtName != other.mediaFmtName) return false;
             if (this.retrievalLocation != other.retrievalLocation) return false;
             if (this.notes != other.notes) return false;
-            if (this.publicationDate != other.publicationDate) return false;
-            if (this.originalPublicationDate != other.originalPublicationDate) return false;
-            if (this.fetchDate != other.fetchDate) return false;
+            //if (this.publicationDate != other.publicationDate) return false;
+            //if (this.originalPublicationDate != other.originalPublicationDate) return false;
+            //if (this.fetchDate != other.fetchDate) return false;
             return true;
         }
     }
