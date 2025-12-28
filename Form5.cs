@@ -105,11 +105,51 @@ namespace CiteWrong
                 default:
                     retval.x = -1;
                     retval.y = -1;
-                    break;
+                    return retval;
             }
             callback = DoNothing;
-            return retval;
+            return EliminateDupes(retval, tgt);
 
+        }
+
+        private DualInt EliminateDupes(DualInt retval, target tgt)
+        {
+            DualInt removed = retval;
+            switch (tgt)
+            {
+                case target.cite:
+
+                    for (int i = 0; i < Bibliography.bDatabase.Count; i++)
+                    {
+                        for (int j = 0; j < Bibliography.bDatabase.Count; j++)
+                        {
+                            if (i != j)
+                            {
+                                if (Bibliography.bDatabase[i].ToString().Equals(Bibliography.bDatabase[j].ToString()))
+                                {
+                                    Bibliography.bDatabase.RemoveAt(j); removed.y++;
+                                }
+                            }
+                        }
+                    }
+                    return removed;
+                default:
+                    for (int i = Bibliography.SchemeFormats.Count-1; i >= 0; i--)
+                    {
+                        for (int j = Bibliography.SchemeFormats.Count-1; j >= 0; j--)
+                        {
+                            if (i != j)
+                            {
+                                if (Bibliography.SchemeFormats[i].ToString().Equals(Bibliography.SchemeFormats[j].ToString()))
+                                {
+                                    Bibliography.SchemeFormats.RemoveAt(i); removed.y++;
+                                }
+                            }
+                        }
+                    }
+                    return removed;
+            }
+            
         }
         DualInt Cut(target tgt)
         {

@@ -30,7 +30,7 @@ namespace CiteWrong
         {
             int macrosFound = 1; //set it to 1 at the start so it actually starts, this is to account for nested macros
             string OriginalPublicationDate = originalPublicationDate.ToString("dd MMMM yyyy");
-            string output = "An equivalent category has not been found in the current bibliography scheme. Author$ Year$ Title$";
+            string output = "An equivalent category has not been found in the current bibliography scheme. Author$ Year$ Title$ Location$";
             foreach (SchemeDefinition s in Bibliography.SchemeFormats)
             { 
                 if (s.title == sourceFmt){output = s.syntax;}
@@ -70,8 +70,20 @@ namespace CiteWrong
 
             
         }
-
         public bool Equals(BibliographyEntry other)
+        {
+            if (!this.ToString().Equals(other.ToString()))
+            {
+                //MessageBox.Show(this.ToString() + "\n" + other.ToString(), "INEQUAL");
+                return false; 
+            }
+            //if (this.publicationDate != other.publicationDate) return false;
+            //if (this.originalPublicationDate != other.originalPublicationDate) return false;
+            //if (this.fetchDate != other.fetchDate) return false;
+            //MessageBox.Show(this.ToString() + "\n" + other.ToString(), "EQUAL");
+            return true;
+        }
+        public bool OldEquals(BibliographyEntry other)
         {
             if (this.sourceFmt != other.sourceFmt) return false;
             if (this.authorName != other.authorName) return false;
